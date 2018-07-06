@@ -3,8 +3,8 @@
 
 // Author: Paul Brauner (polux@google.com)
 
-import 'dart:math';
 import 'package:benchmark_harness/benchmark_harness.dart';
+import 'package:dart2_constant/math.dart' as polyfill_math;
 import 'package:enumerators/combinators.dart' as c;
 
 class IterationBenchmark extends BenchmarkBase {
@@ -18,7 +18,7 @@ class IterationBenchmark extends BenchmarkBase {
 
   void run() {
     for (final part in listsOfNats.parts.skip(500).take(20)) {
-      part[part.length ~/ PI];
+      part[part.length ~/ polyfill_math.pi];
     }
   }
 }

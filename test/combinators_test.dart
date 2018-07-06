@@ -183,7 +183,7 @@ void testProductsOf() {
 void testPositiveRationalsArePositive() {
   c.positiveRationals
       .take(1000)
-      .forEach((r) => expect(r >= new Rational(0), isTrue));
+      .forEach((r) => expect(r >= new Rational(BigInt.from(0)), isTrue));
 }
 
 void testRationalsAreAllDifferent() {

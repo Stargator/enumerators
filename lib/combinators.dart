@@ -127,7 +127,7 @@ Enumeration<int> _mkInts() {
 }
 
 Enumeration<Rational> _mkRationals() {
-  return singleton(new Rational(0)) +
+  return singleton(new Rational(BigInt.from(0))) +
       (positiveRationals + positiveRationals.map((r) => -r)).pay();
 }
 
@@ -140,7 +140,7 @@ Rational _unGcd(List<bool> path) {
     else
       numerator += denominator;
   }
-  return new Rational(numerator, denominator);
+  return new Rational(BigInt.from(numerator), BigInt.from(denominator));
 }
 
 Enumeration<Rational> _mkPositiveRationals() {

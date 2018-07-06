@@ -66,7 +66,7 @@ void testCardinalOfApply() {
 void testIndexEmpty() {
   final empty = new Finite.empty();
   for (int i = 0; i < 100; i++) {
-    expect(() => empty[i], throwsA(new isInstanceOf<RangeError>()));
+    expect(() => empty[i], throwsA(const TypeMatcher<RangeError>()));
   }
 }
 
@@ -74,7 +74,7 @@ void testIndexSingleton() {
   final foo = new Finite.singleton('foo');
   expect(foo[0], equals('foo'));
   for (int i = 1; i < 100; i++) {
-    expect(() => foo[i], throwsA(new isInstanceOf<RangeError>()));
+    expect(() => foo[i], throwsA(const TypeMatcher<RangeError>()));
   }
 }
 
@@ -91,7 +91,7 @@ void testIndexSum() {
     expect(sum[1], equals('bar'));
     expect(sum[2], equals('baz'));
     for (int i = 3; i < 100; i++) {
-      expect(() => sum[i], throwsA(new isInstanceOf<RangeError>()));
+      expect(() => sum[i], throwsA(const TypeMatcher<RangeError>()));
     }
   }
 }
@@ -111,7 +111,7 @@ void testIndexProd() {
   expect(prod[3].fst, equals('bar'));
   expect(prod[3].snd, equals('bar'));
   for (int i = 4; i < 100; i++) {
-    expect(() => prod[i], throwsA(new isInstanceOf<RangeError>()));
+    expect(() => prod[i], throwsA(const TypeMatcher<RangeError>()));
   }
 }
 
@@ -124,7 +124,7 @@ void testIndexMap() {
   expect(finDoubled[1], equals(4));
   expect(finDoubled[2], equals(6));
   for (int i = 3; i < 100; i++) {
-    expect(() => finDoubled[i], throwsA(new isInstanceOf<RangeError>()));
+    expect(() => finDoubled[i], throwsA(const TypeMatcher<RangeError>()));
   }
 }
 
@@ -138,7 +138,7 @@ void testIndexApply() {
   expect(applied[2], equals(3));
   expect(applied[3], equals(6));
   for (int i = 4; i < 100; i++) {
-    expect(() => applied[i], throwsA(new isInstanceOf<RangeError>()));
+    expect(() => applied[i], throwsA(const TypeMatcher<RangeError>()));
   }
 }
 
@@ -166,7 +166,7 @@ void testFirst() {
   final _42 = new Finite.singleton(42);
   final _43 = new Finite.singleton(43);
   expect(
-      () => new Finite.empty().first, throwsA(new isInstanceOf<StateError>()));
+      () => new Finite.empty().first, throwsA(const TypeMatcher<StateError>()));
   expect(_42.first, equals(42));
   expect((_42 + _43).first, equals(42));
   expect((_42 * _43).first, equals(new Pair(42, 43)));
@@ -177,7 +177,7 @@ void testLast() {
   final _42 = new Finite.singleton(42);
   final _43 = new Finite.singleton(43);
   expect(
-      () => new Finite.empty().last, throwsA(new isInstanceOf<StateError>()));
+      () => new Finite.empty().last, throwsA(const TypeMatcher<StateError>()));
   expect(_42.last, equals(42));
   expect((_42 + _43).last, equals(43));
   expect((_42 * _43).last, equals(new Pair(42, 43)));
