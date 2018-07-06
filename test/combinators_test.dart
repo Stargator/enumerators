@@ -6,7 +6,7 @@
 import 'package:enumerators/enumerators.dart' as e;
 import 'package:enumerators/combinators.dart' as c;
 import 'package:rational/rational.dart';
-import 'package:unittest/unittest.dart';
+import 'package:test/test.dart';
 import 'src/common.dart';
 
 void testBools() {

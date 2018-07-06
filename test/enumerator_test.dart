@@ -4,7 +4,7 @@
 // Author: Paul Brauner (polux@google.com)
 
 import 'package:enumerators/enumerators.dart';
-import 'package:unittest/unittest.dart';
+import 'package:test/test.dart';
 import 'src/common.dart';
 
 void testPay() {

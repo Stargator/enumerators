@@ -4,7 +4,7 @@
 // Author: Paul Brauner (polux@google.com)
 
 import 'package:enumerators/enumerators.dart';
-import 'package:unittest/unittest.dart';
+import 'package:test/test.dart';
 
 void testCardinalOfSum() {
   final empty = new Finite.empty();

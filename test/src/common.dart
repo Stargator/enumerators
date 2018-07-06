@@ -6,7 +6,7 @@
 library common;
 
 import 'package:enumerators/enumerators.dart';
-import 'package:unittest/unittest.dart';
+import 'package:test/test.dart';
 
 Enumeration listToEnum(List<List> list) {
   return new Enumeration(
